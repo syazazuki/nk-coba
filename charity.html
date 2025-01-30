@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Katibeh&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titan+One&display=swap" rel="stylesheet">
+  <title>Charity</title>
+  <style>
+    
+/* Charity Section */
+
+.charity-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130vh; /* Make it take the full height of the viewport */
+  flex-direction: column; /* Align content vertically */
+  text-align: center;
+
+}
+
+#charity-section h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fc8289; /* Match brand color */
+}
+h1{
+  color: #fc8289; /* Match brand color */
+  font-size: 3em;
+}
+.charity-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px; /* Ensures spacing between text and video */
+  flex-wrap: wrap; /* Enables wrapping for smaller screens */
+  width: 1200px;
+  margin-top: 30px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 75%; /* Adjust width of text */
+  text-align: justify;
+}
+
+.video-content {
+  flex: 1;
+  max-width: 75%; /* Adjust width of video */
+  display: flex;
+  margin-top: 50px;
+}
+
+.charity-section p {
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.charity-section img {
+  display: block;
+  margin: 20px auto;
+  max-width: 150px;
+  height: auto;
+}
+
+/* Ensures proper video responsiveness */
+.video-content iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Maintains proper video aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .charity-content {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    text-align: center;
+  }
+
+  .text-content,
+  .video-content {
+    max-width: 100%; /* Allow both sections to take full width */
+  }
+}
+/* How Donations Help */
+        #howdonationhelp{
+          display: flex; /* Enables flexbox */
+          flex-direction: column; /* Ensures content stacks vertically */
+          align-items: center; /* Centers horizontally */
+          justify-content: center; /* Centers vertically */
+          text-align: center;
+          height: 100vh; /* Full viewport height */
+          margin: 0; /* Reset margin to avoid shifting */
+        }
+       
+       
+        /* Highlight the targeted row */
+table tr:target {
+    background-color: #ffebcc; /* Light yellow highlight */
+    transition: background-color 0.5s ease;
+    scroll-margin-top: 100px; /* Adjust for fixed headers, if any */
+}
+
+/* Table styles */
+table {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 150px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    vertical-align: top;
+    text-align: left;
+    
+}
+table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    
+}
+/* Styling for donation boxes */
+.donations {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.donation-box {
+    background-color: #fff;
+    border: 1px solid #535353;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 4px rgb(78, 70, 70);
+    transition: transform 0.3s ease;
+}
+
+.donation-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.donation-box p {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Hover effect for donation boxes */
+.donation-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(251, 174, 174, 0.977);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar Section-->
+  <div class="navb">
+    <ul>
+      <li>
+        <a href="http://mixuemalaysia.com/menu">
+          <img src="picture/logomixue.png" alt="Logo">
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="index.html" class="dropbtn">Home<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="charity.html" class="dropbtn">Charity<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#aboutcharity">About Charity</a>
+          <a href="#howdonationhelp">How Donation Helps?</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="howitworks.html" class="dropbtn">How It Works<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="submit_artwork.html" class="dropbtn">Submit Artwork<i class="fa fa-caret-down"></i></a>
+      </li>
+    </ul>
+  </div>
+
+ <!-- Countdown Section -->
+ <div id="countdown-container" class="countdown-container">
+  <h3>Contest Timeline</h3>
+    <p id="demo"></p>
+    <p class="contest-details">Contest ends on 31 March 2025.</p>
+  </div>
+
+    <!-- Charity Section -->
+
+  <div class="charity-section">
+    <div id="aboutcharity"><h1>About Charity</h1>
+    <!-- Flexbox for content and video -->
+    <div class="charity-content">
+      <!-- Text Section -->
+      <div class="text-content">
+        <p>
+          MIXUE has partnered with Food Bank Malaysia
+          to support families in need. For every artwork submitted, RM10 will go towards supporting the foods and school supplies.
+        </p>
+        <a href="https://foodbankmalaysia.com/" target="_blank">
+        <img src="picture/foodbankmalaysialogo.gif" alt="Food Bank Malaysia">
+        </a>
+        <p style="text-align: center; color: #727070;">
+          <em><b>Our mission is to end hunger and food waste in Malaysia. We believe that everyone deserves access to safe, nutritious food, and we are committed to making that a reality.</b></em>
+          <br><em> -Food Bank Malaysia, 2023-</em> <br><br></p>
+        <p>Food Bank Malaysia is registered with The Registry of Societies of Malaysia as a non-profit that rescues
+          edible surplus food and delivers it to those in need. From manufacturers to families, they bridge the gap
+          between waste and nourishment, empowering communities and reducing food insecurity.</p>
+        
+      </div>
+      
+      <!-- Video Section -->
+      <div class="video-content">
+        <iframe 
+          src="video/foodbankvideo.mp4" 
+          title="Charity Video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- Donation Section -->
+  
+     
+      <div class="card" id="howdonationhelp">
+        <h1 style="font-size: 3em; text-align:center;">How Your Donations Help</h1>
+        <p>Your contributions of RM10 or more will support providing food, school supplies, and educational classes for students in need.</p>
+        <div class="donations">
+            <div class="donation-box">
+                <a href="#food">
+                    <img src="picture/foods.jpg" alt="Food items" />
+                    <p>Foods</p>
+                </a>
+            </div>
+            <div class="donation-box">
+                <a href="#school_supplies">
+                    <img src="picture/schoolsupplies.jpg" alt="School supplies" />
+                    <p>School Supplies</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Detailed Donation Information Section -->
+    <h1 style="font-size: 3em; text-align:center;">For Charity</h1>
+    <table>
+        <!-- Food Section -->
+        <tr id="food">
+            <th>Foods</th>
+            <td>
+                All the raw, wet and dry ingredients will be used to cook meals and give to the families in need, ensuring they have nutritious food to sustain their daily lives. These meals aim to provide temporary relief to those who are struggling to afford daily necessities. Each meal is prepared with love and care to ensure that no one has to go hungry.
+            </td>
+            <td>
+              <a href="picture/foodsectionbottom.jpg">
+                <img src="picture/foodsectionbottom.jpg" alt="Food Preparation" style="width: 100%; max-width: 300px;">
+            </td>
+          </a>
+        </tr>
+        <!-- School Supplies Section -->
+        <tr id="school_supplies">
+            <th>School Supplies</th>
+            <td>
+                All the school supplies will be distributed to the children to support their educational needs, ensuring they have the tools needed to excel in learning. These supplies aim to reduce the financial burden on their families and create a positive learning environment, inspiring them to reach their full potential.
+            </td>
+            <td>
+              <a href="picture/schoolsuppliessectionbottom.jpg">
+                <img src="picture/schoolsuppliessectionbottom.jpg" alt="School Supplies Distribution" style="width: 100%; max-width: 300px;">
+            </td>
+        </tr>
+    </table>
+    
+<!-- Go To Top Button -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Go to the top ▲</button>
+
+<!-- Script JAVA link to script.js -->
+<script src="script.js"></script>
+
+<!-- Footer section -->
+<div class="footer">
+  <p><strong>Universiti Teknologi MARA</strong></p>
+  <p><strong>Subject:</strong> Introduction to Web Content Management and Design (IMD318)</p>
+  <p><strong>Group Member:</strong></p>
+  <ul style="display: block;">
+    <li>FARAH AQILAH BINTI BADRUL HISHAM (2022454934)</li>
+    <li>IDHAR SHAZRIEL BIN ISMAIL (2022614704)</li>
+    <li>SYAZA SHAMIMI BINTI ZUKI (2022895316)</li>
+</ul>
+<p><em>Disclaimer: This project is created for educational purposes only. It is not intended for commercial use.</em></p>
+</div>
+
+  </body>
+</html>

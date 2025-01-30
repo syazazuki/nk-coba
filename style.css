@@ -1,0 +1,376 @@
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+        margin: 0;
+      }
+/* General styles */
+.navb {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  position: absolute;
+  width: 100%; /* Ensure it spans the full width of the page */
+  z-index: 1000; /* Make sure it stays on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for visibility */
+}
+
+.navbar:hover {
+  background-color: white; /* White background on hover */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Transparent background for the navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+ul:hover {
+  background-color: white; /* White background when hovering over ul */
+}
+
+li {
+  position: relative;
+  margin: 0;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
+
+li a, .dropbtn {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+li a i {
+  margin-left: 2px; /* Minimal spacing */
+  font-size: 14px;
+  vertical-align: baseline; /* Align properly with text */
+  line-height: 1;
+}
+
+li a:hover, .dropdown:hover > .dropbtn {
+  color: rgb(252, 148, 148);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #fc8289;
+  color: white;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  li a {
+    padding: 12px 15px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    text-align: left;
+    padding-left: 25px;
+  }
+}
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  font-size: 2rem;
+  color: white;  /* Snowflakes are now white */
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+      transform: translateY(100vh);
+      opacity: 0;
+  }
+}
+
+.snowflake:nth-child(1) {
+  animation-duration: 10s;
+  animation-delay: 0s;
+  left: 10%;
+}
+
+.snowflake:nth-child(2) {
+  animation-duration: 12s;
+  animation-delay: 1s;
+  left: 20%;
+}
+
+.snowflake:nth-child(3) {
+  animation-duration: 15s;
+  animation-delay: 3s;
+  left: 30%;
+}
+
+.snowflake:nth-child(4) {
+  animation-duration: 9s;
+  animation-delay: 2s;
+  left: 40%;
+}
+
+.snowflake:nth-child(5) {
+  animation-duration: 13s;
+  animation-delay: 4s;
+  left: 50%;
+}
+
+.snowflake:nth-child(6) {
+  animation-duration: 11s;
+  animation-delay: 5s;
+  left: 60%;
+}
+
+.snowflake:nth-child(7) {
+  animation-duration: 16s;
+  animation-delay: 2s;
+  left: 70%;
+}
+
+.snowflake:nth-child(8) {
+  animation-duration: 14s;
+  animation-delay: 3s;
+  left: 80%;
+}
+
+.snowflake:nth-child(9) {
+  animation-duration: 10s;
+  animation-delay: 4s;
+  left: 90%;
+}
+
+.snowflake:nth-child(10) {
+  animation-duration: 12s;
+  animation-delay: 1s;
+  left: 15%;
+}
+/* Center the text on the home section */
+#toggleAudioButton {
+    background: #ffc0c0;
+    border: none;
+    color: #333;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  #toggleAudioButton i {
+    transition: transform 0.3s ease;
+  }
+
+  #toggleAudioButton:hover i {
+    transform: scale(1.2);
+  }
+  h2{
+    font-size: 3em; 
+    text-align:center;
+    color: #fc8289;
+  }
+  h4{
+    font-size: 30px;
+  }
+  /* Center the text on the home section */
+  .home-content {
+    height: calc(100vh - 80px); /* Take full screen height minus navbar */
+    text-align: center;
+    color: #fc8289; /* Match brand color */
+    padding: 20px;
+  
+  }
+  
+  .home-content h1 {
+    font-size: 3em;
+    margin: 0;
+    width: 70%;
+    display: flex;
+    color: #ff0000;
+    justify-content: center;
+  }
+  
+  .home-content p {
+    font-size: 1.5em;
+    margin: 0;
+   text-align: justify;
+   width: 70%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .homeimg {
+    width: 70%;
+    padding: 10px;
+    display: flex; /* Add this to enable flexbox */
+    justify-content: center; /* This centers the content horizontally */
+    align-items: center; /* This centers the content vertically if the container has more height */
+    margin: 0 auto; /* This will center the entire .homeimg block */
+  }
+  
+  .homeimg img {
+    width: 100%;
+   
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 0px;
+    margin-top: 0px;
+  }
+  .card p{
+    width: 60%;
+    display: flex;
+    
+  }
+  .fa {
+    padding: 10px;
+    font-size: 25px;
+    width: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin:14px;
+    border-radius: 100%;
+    
+  }
+  .fa:hover {
+      opacity: 0.7;
+  }
+  .countdown-container {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 10px;
+  }
+  
+  #demo {
+    font-size: 12px;
+    color: #000000;
+  }
+  
+  .event-details {
+    font-size: 10px;
+    
+  }
+  #countdown-container {
+    text-align: center;
+    position: fixed;  /* Fixes it to the viewport */
+    top: 20px;        /* Adjust this to place it at the top */
+    right: 20px;      /* Adjust this to place it on the right */
+    background-color: #f0b9bb;
+    color: black;
+    border-radius: 10px;
+    width: 250px;
+    z-index: 1000;  /* Ensures it's above other content */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* Adds shadow for better visibility */
+  }
+  
+  #countdown-container {animation-timing-function: ease-in;}
+  
+  
+  @keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+  }
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
+  /* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffc0c0;
+  margin-top: 20px;
+}
+.footer ul{
+  background-color: transparent; /* Transparent background for the navbar */
+}

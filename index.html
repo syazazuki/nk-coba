@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Katibeh&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titan+One&display=swap" rel="stylesheet">
+  <title>Home</title>
+  <style>
+
+/* Home Style */
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make it take the full height of the viewport */
+  flex-direction: column; /* Align content vertically */
+  text-align: center;
+  color: #fc8289; /* Match brand color */
+  background-image: url('picture/mixuebg.jpg'); /* Specify the background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home-content h1 {
+  font-family: "Katibeh", serif;
+  font-size: 6em;
+  margin-top: -80px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(255, 255, 255); /* Solid red text */
+  background: linear-gradient(90deg, #ffb0b0, #ff5e5e, #ffb0b0); /* Red gradient background */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 5s infinite;
+}
+.home-content p {
+  font-size: 1.5em;
+  margin: 0;
+ text-align:center;
+ width: 60%;
+  display: flex;
+  color: #fd8585;
+  justify-content: center;
+}
+.homeimg {
+  padding: 10px;
+  display: flex; /* Add this to enable flexbox */
+  justify-content: center; /* This centers the content horizontally */
+  align-items: center; /* This centers the content vertically if the container has more height */
+  margin: 0 auto; /* This will center the entire .homeimg block */
+}
+.homeimg img {
+  width: 100%;
+}
+
+/* Moto Animation */
+.moto_animation {
+    position: absolute;
+    top: 70%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: carMove 10s infinite;
+}
+.moto_animation img {
+    width: 200px;
+    height: auto;
+}
+/* Animation for the moto movement */
+@keyframes carMove {
+    0% {
+        left:0%; transform: translate(-50%, -50%) translateX(0);
+    }
+    20% {
+      left:10%; transform: translate(-50%, -50%) translateX(100px);
+  }
+    50% {
+        left:45%; transform: translate(-50%, -50%) translateX(100px);
+    }
+    70% {
+      left:70%; transform: translate(-50%, -50%) translateX(100px);
+  }
+    100% {
+        left:100%;transform: translate(-50%, -50%) translateX(0);
+    }
+}
+
+/* Add a card effect for home section*/
+
+
+p{
+  font-size: 16px; 
+  text-align:center;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card p {
+  background-color: #fd8585;
+  padding: 10px 100px;
+  border-radius: 90px;
+  position: relative;
+}
+.card-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.contest_card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 18%;
+  background-color: #fd8585;
+}
+.contest_card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: rgb(247, 243, 186);
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.container {
+  padding: 2px 16px;
+}
+.container h4{
+  text-align: center;
+}
+.container ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Transparent background for the navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  
+}
+#contest_poster{
+  height: 100vh;
+}
+#contest_poster img{
+  width: 70%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+/* Dropdown Style about contest, prize, follow us*/
+#about_contest{
+  height: 120vh;
+  align-items: center;
+}
+.container a:link, a:visited {
+  background-color: rgb(240, 195, 44);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #000;
+  border-radius: 12px;
+}
+.card2{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#prize{
+  height: 100vh;
+  align-items: center;
+}
+#followus {
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #fafafa; /* Highlighted background matching brand color */
+  color: black; /* Text color for contrast */
+  text-align: center;
+  padding: 20px;
+}
+#followus h3 {
+  font-size: 3em;
+}
+#followus .fa {
+  padding: 20px; /* Adjust padding */
+  width: 150px; /* Set a width for the icon */
+  height: 150px; /* Ensure the height is the same as the width for a circular effect */
+  text-align: center; /* Center the icon inside the circle */
+  border-radius: 50%; /* Make the icons circular */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+#followus .fa:hover {
+  transform: scale(1.1); /* Scale the icon on hover */
+  opacity: 0.8; /* Slight fade effect */
+}
+#followus .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+#followus .fa-instagram {
+  background: #125688;
+  color: white;
+}
+#followus .fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+#followus .social-icon {
+  display: inline-block;
+  margin: 10px;
+}
+#followus .social-icon .fa {
+  font-size: 100px; /* Adjust size as needed */
+  display: block;
+}
+#followus .social-icon .caption {
+  font-size: 1.5em;
+  color: #555050;
+  display: flex;
+  justify-content: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Snowflake animation -->
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+</div>
+  
+<!-- Mixue Audio Section -->
+  <audio id="backgroundAudio" autoplay loop>
+    <source src="audio/lagumixue.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<!-- Navigation Bar Section-->
+  <div class="navb">
+    <ul>
+      <li>
+        <a href="http://mixuemalaysia.com/menu">
+          <img src="picture/logomixue.png" alt="Logo">
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="index.html" class="dropbtn">Home<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#contest_poster">Colouring Contest Poster</a>
+          <a href="#about_contest">About the Contests</a>
+          <a href="#prize">Prize</a>
+          <a href="#followus">Follow Us</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="charity.html" class="dropbtn">Charity<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="howitworks.html" class="dropbtn">How It Works<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="submit_artwork.html" class="dropbtn">Submit Artwork<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li>
+<!-- Speaker Icon for Mixue Audio -->
+      <button id="toggleAudioButton">
+        <i class="fa fa-volume-up"></i>
+      </button>
+      </li>
+    </ul>
+  </div>
+
+  
+
+<!-- Home Section -->
+<div class="home-content">
+    <h1>Celebrate Mixue's 100th Store</h1>
+    <p>
+      Celebrate our 100th store milestone with creativity! Join our Colouring Contest and support a great cause. Click buttons below to learn more about the contest.<br>#100StoresColouringContest #ArtForACause
+    </p>
+    <div class="container">
+    <a href="#contest_poster">Colouring Contest Poster</a>
+    <a href="#about_contest">About the Contest</a>
+    <a href="submit_artwork.html" target="_blank">Join Now!</a>
+    </div>
+  <div class="moto_animation">
+    <img src="picture/mixuemoto.png" alt="Moto Animation">
+</div>
+</div>
+
+
+<!-- contest Poster Section -->
+<div id="contest_poster">
+  <h2>Colouring Contest Poster</h2>
+  <img src="picture/event_poster.jpg" alt="Colouring Contest Poster" class="center"> 
+</div>
+
+
+<!-- About contest Section -->
+    <div id="about_contest">
+   <h2>About the Contest</h2>
+  <div class="card2">
+   <div class="contest_card" >
+    <img src="picture/aboutevent (1).jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Objective</b></h4> 
+      <p>In conjunction with Mixue's 100th store celebration, this Colouring Contest allows participants to make a positive impact. For every entry, RM10 will be donated to the Food Bank Malaysia, the organization we are partnering with to help those in need. </p> 
+      <a href="charity.html">Learn more about charity</a>
+    </div>
+  </div>
+  <div class="contest_card">
+    <img src="picture/aboutevent (2).jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Age Category</b></h4> 
+      <ul style="list-style-type:disc; display: block; margin-left: 20px;">
+        <li>Kids: 7 years old - 12 years old</li>
+        <li>Teenagers: 13 years old - 17 years old</li>
+        <li>Adults: 18 years old and above</li>
+      </ul>
+    </div>
+  </div>
+  <div class="contest_card">
+    <img src="picture/aboutevent (3).jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Entry Fee</b></h4> 
+      <p><em>Free Of Charge!</em></p> 
+    </div>
+  </div>
+  <div class="contest_card">
+    <img src="picture/aboutevent (4).jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Medium Usage and Theme</b></h4> 
+      <p>
+        <ul style="list-style-type:disc; display: block; margin-left: 20px;">
+          <li><b>Medium Usage: </b>Crayon, Colored Pencils, Marker and Watercolours</li>
+          <li><b>Not Allowed: </b> Digital art or AI-generated artwork, Oil paints, spray paints or any mixed media involving non-Colouring materials</li>
+          <li><b>Theme: </b> Mixue Around the World</li>
+        </ul>
+      </p> 
+    </div>
+  </div>
+  </div>
+    </div>
+
+<!-- Prize Section -->
+      <div id="prize">
+        <h2>Prize</h2>
+          <p>Show off your creative flair and win amazing rewards! Heres whats in store for the top submissions:</p>
+          <div class="homeimg" >
+            <img src="picture/prizeimg.png"  alt="contest prize">
+          </div>
+           </div>
+      </div>
+   
+<!-- Countdown Section -->
+      <div id="countdown-container" class="countdown-container">
+      <h3>Contest Timeline</h3>
+        <p id="demo"></p>
+        <p class="contest-details">Contest ends on 31 March 2025.</p>
+      </div>
+      
+<!-- Countdown Section --> 
+    <div id="followus">
+      <h2>Follow Us</h2>
+       <div class="card" >
+        <div class="social-icon">
+          <a href="https://www.facebook.com/profile.php?id=61560449501374" class="fa fa-facebook" target="_blank"></a>
+          <p class="caption">Facebook</p>
+        </div>
+        <div class="social-icon">
+          <a href="https://www.instagram.com/mixuemalaysiamy/" class="fa fa-instagram" target="_blank"></a>
+          <p class="caption">Instagram</p>
+        </div>
+        <div class="social-icon">
+          <a href="https://www.youtube.com/@mixuemalaysia1274" class="fa fa-youtube" target="_blank"></a>
+          <p class="caption">YouTube</p>
+        </div>
+      </div>
+         </div>
+
+<!-- Go To Top Button -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Go to the top ▲</button>
+
+<!-- Script JAVA link to script.js -->
+<script src="script.js"></script>
+
+<!-- Footer section -->
+<div class="footer">
+    <p><strong>Universiti Teknologi MARA</strong></p>
+    <p><strong>Subject:</strong> Introduction to Web Content Management and Design (IMD318)</p>
+    <p><strong>Group Member:</strong></p>
+    <ul style="display: block;">
+      <li>FARAH AQILAH BINTI BADRUL HISHAM (2022454934)</li>
+      <li>IDHAR SHAZRIEL BIN ISMAIL (2022614704)</li>
+      <li>SYAZA SHAMIMI BINTI ZUKI (2022895316)</li>
+  </ul>
+  <p><em>Disclaimer: This project is created for educational purposes only. It is not intended for commercial use.</em></p>
+</div>
+</body>
+</html>

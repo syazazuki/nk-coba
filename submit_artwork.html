@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Submit Artwork</title>
+  <style>
+.submit-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140vh; /* Make it take the full height of the viewport */
+  flex-direction: column; /* Align content vertically */
+  text-align: center;
+  color: #fc8289; /* Match brand color */
+}
+#submissionform{
+    height: 100vh;
+    align-items: center;
+ 
+}  
+.form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #efcacc;
+      color: #333;
+    }
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+    }
+.form-container button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #e8f092;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.form-container button a{
+  text-decoration: none;
+}
+.form-container button:hover {background-color: #a2f1a5}
+
+.form-container button:active {
+  background-color: #a8ffaa;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: #0f0f0f;
+}
+  </style>
+</head>
+<body>
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+    <div class="snowflake">❄️</div>
+</div>
+   
+
+  <!-- Navigation Bar Section-->
+  <div class="navb">
+    <ul>
+      <li>
+        <a href="http://mixuemalaysia.com/menu">
+          <img src="picture/logomixue.png" alt="Logo">
+        </a>
+      </li>
+      <li class="dropdown">
+        <a href="index.html" class="dropbtn">Home<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="charity.html" class="dropbtn">Charity<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="howitworks.html" class="dropbtn">How It Works<i class="fa fa-caret-down"></i></a>
+      </li>
+      <li class="dropdown">
+        <a href="submit_artwork.html" class="dropbtn">Submit Artwork<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#submissionform">Submission Form</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<!-- Countdown Section -->
+<div id="countdown-container" class="countdown-container">
+  <h3>Contest Timeline</h3>
+    <p id="demo"></p>
+    <p class="contest-details">Contest ends on 31 March 2025.</p>
+  </div>
+
+  <div class="submit-section">
+    <h2>Submission Form</h2>
+    <div class="form-container">
+        <form action="mailto:syazashamimi2809@gmail.com" method="POST" enctype="text/plain">
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="First Name" value=""><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="Last name" value=""><br>
+          <label for="pnum">Phone Number</label><br>
+          <input type="text" id="pnum" name="Phone number" value=""><br>
+          <label for="ICnum">IC Number</label><br>
+          <input type="text" id="ICnum" name="IC Number" value=""><br>
+          <label for="desc">Description:</label><br>
+          <textarea id="desc" name="description" rows="4" cols="50"></textarea><br>          
+          <p>Choose your category:</p>
+              <input type="radio" id="Kids (7-12)" name="category" value="Kids (7-12)">
+              <label for="Kids (7-12 y/o)">Kids (7-12)</label><br>
+              <input type="radio" id="Teenagers (13-17)" name="category" value="Teenagers (13-17)">
+              <label for="Teenagers (13-17)">Teenagers (13-17)</label><br>
+              <input type="radio" id="Adult (18- above)" name="category" value="Adult (18- above)">
+              <label for="Adult (18- above)">Adult (18-above)</label><br><br>
+          <input type="file" id="myFile" name="File name"></p>
+          <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            I agree to the <a href="picture/TermandCond.jpg" target="_blank">Terms and Conditions</a>.
+          </label><br><br>
+        
+          <input type="submit" value="Submit">
+          <p style="font-size: 1.0em;">Click on the "Choose File" button to upload a file. Only files up to 100 MB are allowed.<br> <em>Submissions exceeding this limit will fail.</em></p>
+        </form> 
+        <button>
+        <a href="https://youtu.be/ZNaejgHLlSY?si=qQHvVvlcfcrc0trC" target="_blank">Tutorial to Upload</a>
+        </button>       
+      </div>     
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Go to the top ▲</button>
+<!-- Script JAVA link to script.js -->
+<script src="script.js"></script>
+
+<!-- Footer section -->
+<div class="footer">
+  <p><strong>Universiti Teknologi MARA</strong></p>
+  <p><strong>Subject:</strong> Introduction to Web Content Management and Design (IMD318)</p>
+  <p><strong>Group Member:</strong></p>
+  <ul style="display: block;">
+    <li>FARAH AQILAH BINTI BADRUL HISHAM (2022454934)</li>
+    <li>IDHAR SHAZRIEL BIN ISMAIL (2022614704)</li>
+    <li>SYAZA SHAMIMI BINTI ZUKI (2022895316)</li>
+</ul>
+<p><em>Disclaimer: This project is created for educational purposes only. It is not intended for commercial use.</em></p>
+</div>
+
+</body>
+</html>

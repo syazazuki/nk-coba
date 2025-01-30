@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>How It Works</title>
+  <style>
+  * {
+  box-sizing: border-box;
+}
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+      margin: 0;
+      background-image: url("picture/mixuebackground.jpeg"); 
+    }
+/* General styles */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ffc0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+li {
+  position: relative;
+  margin: 0;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+li a, .dropbtn {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+li a i {
+  margin-left: 2px; /* Minimal spacing */
+  font-size: 14px;
+  vertical-align: baseline; /* Align properly with text */
+  line-height: 1;
+}
+li a:hover, .dropdown:hover > .dropbtn {
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #fc8289;
+  color: white;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  li a {
+    padding: 12px 15px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    text-align: left;
+    padding-left: 25px;
+  }
+}
+/* Center the text on the home section */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* Take full screen height minus navbar */
+  text-align: center;
+  color: #fc8289; /* Match brand color */
+}
+
+.home-content h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.home-content p {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/* title of sub navigation bar */
+.howitworks { 
+  text-align: center; 
+  font-size: 25px;
+  color: red;
+  height:100vh;
+  align-items: center;
+}
+
+/* paragraph of sub navigation bar */
+.howitworks p { 
+  color: black;
+}
+
+/* how to participate contents*/
+.howtoparticipate {  
+  font-size: 20px;
+  display: inline-block; 
+  color: black;
+  background-color: #ebddd7;
+  padding: 10px;
+  border-radius: 8px; 
+}
+
+/* heading of how to participate */
+.howtoparticipate h3 { 
+  margin: 0; /* Removes default margins around the paragraph */
+}
+
+/* paragraph of how to participate */
+.howtoparticipate p { 
+  font-size: 30px; /* Optional: Adjust paragraph font size for better readability */
+}
+
+
+/* center of all text */
+.center { 
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+/* hover for how to participate contents */
+.hover-zoom { 
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+  
+.hover-zoom:hover {
+    transform: scale(1.1); /* Scales the image to 120% */
+}
+
+/* color your artwork contents */
+.coloryourartwork { /* color your artwork contents */
+    display: inline-block; /* Keeps each image and its text side-by-side */
+    margin: 0 20px; /* Adds space between the containers */
+    vertical-align: top; /* Aligns containers properly if heights differ */
+    text-align: center; /* Ensures text is centered under each image */
+    max-width: 300px; /* Prevents text from spreading too wide */
+  }
+
+/* color your artwork images */
+.coloryourartwork img { 
+    display: block; /* Ensures the image and text stack vertically */
+    margin: 0 auto; /* Centers the image within its container */
+    width: 300px; /* Set the desired width */
+    height: auto; /* Keeps the aspect ratio intact */
+
+  }
+
+/* paragraph color your artwork */
+.coloryourartwork p { 
+    margin-top: 10px; /* Adds space between the image and the text */
+    font-size: 20px; /* Adjust text size as needed */
+    text-align: center; /* Aligns text for better readability */
+    
+  }
+ 
+
+  /* FAQs questions */
+  .accordion { 
+  width: 100%; /* Make them span the entire container */
+  max-width: 600px; /* Set a fixed maximum width (adjust as needed) */
+  margin: 0 auto; /* Center-align the accordion */
+  background-color: #ebddd7;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: outset 2px;
+  outline: none;
+  transition: 0.4s;
+  font-size: 16px;
+   
+}
+
+/* FAQs hover */
+.active, .accordion:hover {  
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+/* FAQs answers */
+.panel {
+  max-width: 400px; /* Match the accordion width */
+  width: 100%; /* Stretch to match parent container width */
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: black;
+  text-align: center; /* Center the text */
+  margin: 10px auto; /* Center the panel and add spacing */
+  font-size: 20px;
+}
+
+
+.fa {
+  padding: 10px;
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin:14px;
+  border-radius: 100%;
+}
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ffc0c0;
+  margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* gallery for previous events */
+div.gallery { 
+  border: 5px solid #ebddd7;
+  overflow: hidden; /* Ensure content stays within bounds */
+  position: relative; /* For child positioning */
+  transition: border 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  width: 80%; /* Adjust this value to make the container smaller */
+  margin: 0 auto; /* Center the container */
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+  transform: scale(1.05); /* Slightly enlarge the gallery */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth image transformations */
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  text-shadow: 0 0 5px #FFE4E1, 0 0 10px #FFE4E1, 0 0 15px #FFE4E1, 0 0 20px #FFE4E1, 0 0 30px #FFE4E1, 0 0 40px #FFE4E1; /* Glowing effect */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 20px;
+  float: left;
+  width: 49.99999%; /* Two images per row */
+} 
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 100%; /* One image per row for smaller screens */
+    margin: 6px 0;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* callout special offer */
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.callout-header {
+  padding: 15px 15px;
+  background: #FFE4E1;
+  font-size: 25px;
+  color: 	#8B0000;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.callout-container {
+  padding: 15px;
+  background-color: #FFFAFA;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.callout-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: lightgrey;
+}
+
+
+/* audio */
+#toggleAudioButton {
+      background: #ffc0c0;
+      border: none;
+      color: #333;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+    }
+
+    #toggleAudioButton i {
+      transition: transform 0.3s ease;
+    }
+
+    #toggleAudioButton:hover i {
+      transform: scale(1.2);
+    }
+
+
+</style>
+
+</head>
+<body>
+
+ <!-- audio -->
+  <audio id="backgroundAudio" autoplay loop>
+    <source src="audio/lagumixue2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="navb">
+    <!-- Navigation Bar -->
+    <ul>
+      <li><img src="picture/logokedua.png" alt="Logo"></li>
+      <li class="dropdown">
+        <a href="index.html" class="dropbtn">Home<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#about_event">About Events</a>
+          <a href="#prize">Prize</a>
+          <a href="#contest_timeline">Contest Timeline</a>
+          <a href="#officialweb">Official Website</a>
+          <a href="#followus">Follow Us</a>
+        </div>
+      </li>
+      <li class="dropdown">
+          <a href="howitworks.html" class="dropbtn">How It Work <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#howtoparticipate">How To Participate</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#previousevent">Previous Events</a>
+          </div>
+          </li>
+      <li class="dropdown">
+          <a href="charity.html"  class="dropbtn">Charity<i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#aboutcharity">About Charity</a>
+            <a href="#howdonationhelp">How Donation Help?</a>
+          </div>
+          </li>
+      <li class="dropdown">
+          <a href="submit_artwork.html"  class="dropbtn">Submit Artwork<i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#submissionform">Submission Form</a>
+          </div>
+          </li>
+
+          <li>
+   <!-- Speaker Icon -->
+   <button id="toggleAudioButton">
+    <i class="fa fa-volume-up"></i>
+  </button>
+          </li>
+    </ul>
+
+   
+ <!-- How It Works contents -->
+<div class="howitworks"> 
+  <h2 id="howtoparticipate">How To Participate:</h2> 
+
+
+<div class="center">
+<div class="howtoparticipate">
+   <h3>1. Download the template</h3> 
+</div>
+   <p>Participants can download and print the template provided on the Google Drive.</p>
+</div>
+
+<div class="center">
+<div class="hover-zoom">  
+  <a target="_blank" href="https://drive.google.com/drive/folders/1v4YDpz9oytuoOR50qGvlNdN3yI4uL6vq?usp=drive_link">
+<img src="picture/mixuecoloringtemplatereal.png">
+<p>Mixue's Coloring Template</p></a>
+</div>
+</div>
+
+<div class="center">
+  <div class="howtoparticipate">
+     <h3>2. Color Your Artwork</h3> 
+  </div>
+     <p>Participants can choose any medium they feel most comfortable with.</p>
+     <p><em>Use your favorite colors to bring the design to life!</em></p>
+  </div>
+
+  <div class="center">
+  <div class="coloryourartwork">
+    <img src="picture/mixuedigitally.png" class="hover-zoom" alt="digital" width="300" height="200">
+    <p>Participants can use digital tools such as graphic design software, coloring apps on smartphones or tablets.</p>
+  </div>
+  <div class="coloryourartwork">
+    <img src="picture/mixuephysically.png" class="hover-zoom" alt="physical" width="300" height="200">
+    <p>Participants can use physical mediums such as crayons, markers and water color.</p>
+  </div>
+  
+  <div class="center">
+    <div class="howtoparticipate">
+       <h3>3. Submit Your Artwork</h3> 
+    </div>
+    <p>Participants can submit their artworks on <a href="submit_artwork.html">Submit Artwork</a>.</p>
+
+
+ <!-- FAQs contents -->
+    <div class="howitworks">
+      <h2 id="faqs">FAQs:</h2> 
+      <div class="accordion-container">
+        <button class="accordion">Who can participate in the contest?</button>
+        <div class="panel">
+          <p>The contest is open to individuals of all ages and skill levels.</p>
+        </div>
+      
+        <button class="accordion">Do I need to pay to participate?</button>
+        <div class="panel">
+          <p>Participation is free!</p>
+        </div>
+      
+        <button class="accordion">Can I submit multiple artworks?</button>
+        <div class="panel">
+          <p>No, each participant is allowed to submit only one artwork.</p>
+        </div>
+
+        <button class="accordion">Can I edit my artwork after submitting it?</button>
+        <div class="panel">
+          <p>Once your artwork is submitted, you cannot edit or resubmit it. Please review your submission carefully before submitting.</p>
+        </div>
+      
+        <button class="accordion">How will I know if I won?</button>
+        <div class="panel">
+          <p>Winners will be notified via email, and the results will be posted on our website.</p>
+        </div>
+      </div>
+      
+  </div>
+  </div>
+
+ <!-- Java for FAQS toggle -->    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null; // Collapse the panel
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px"; // Expand to fit content
+    }
+  });
+}
+
+    </script>
+
+ <!-- previous events contents -->
+ <div class="howitworks">
+    <h2 id="previousevent">Previous Events:</h2> 
+
+ <!-- Row 1 -->
+<div class="responsive">
+  <div class="gallery">
+    <a href="picture/mixueevent1.jpg">
+      <img src="picture/mixueevent1.jpg" alt="mixueevent1" width="600" height="400">
+    </a>
+    <div class="desc">Create Your Own Flavor</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="picture/mixueevent2.jpg">
+      <img src="picture/mixueevent2.jpg" alt="mixueevent2" width="600" height="400">
+    </a>
+    <div class="desc">Fun Walk With Mixue</div>
+  </div>
+</div>
+
+<div class="clearfix"></div> <!-- Clear floats after the first row -->
+
+<!-- Row 2 -->
+<div class="responsive">
+  <div class="gallery">
+    <a href="picture/mixueevent3.jpg">
+      <img src="picture/mixueevent3.jpg" alt="mixueevent3" width="600" height="400">
+    </a>
+    <div class="desc">Mixue Pop-Up Cafe</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="picture/mixueevent4.jpg">
+      <img src="picture/mixueevent4.jpg" alt="mixueevent4" width="600" height="400">
+    </a>
+    <div class="desc">Mixue's Social Media Challenge</div>
+  </div>
+</div>
+
+<div class="clearfix"></div> <!-- Clear floats after the second row -->
+  <div class="callout">
+    <div class="callout-header">Special Offer!</div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+    <div class="callout-container">
+      <a href="picture/mixuefreeicecream.jpg">
+      <img src="picture/mixuecallout.jpg" alt="Callout Image"></a>
+      <p>Click to see the 10% off <a href="picture/mixueoff.jpg">menu</a>.</p>
+    </div>
+  </div>
+
+
+ <!-- footer -->
+ <div class="footer">
+  
+  <p>&copy; 2024 Mixue Malaysia. All rights reserved.</p>
+  <p>Join the Coloring Contest and make a difference today!</p>
+  <p>For more details, visit our <a href="https://mixuemenu.com/malaysia/">Official Website</a>.</p>
+  <p>Contact us <a href="https://mixuemenu.com/contact/">Facebook</a>, <a href="https://www.instagram.com/mixuemalaysiamy/">Instagram</a>, and <a href="https://www.youtube.com/@mixuemalaysia1274">YouTube</a>.</p>
+  <p><a href="https://mixuemenu.com/privacy-policy/">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms & Conditions</a></p>
+
+
+ <!-- Java for audio -->
+  <script>
+    const audio = document.getElementById('backgroundAudio');
+    const toggleButton = document.getElementById('toggleAudioButton');
+    const icon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play(); // Play the audio
+        icon.classList.remove('fa-volume-off'); // Update to "volume-up" icon
+        icon.classList.add('fa-volume-up');
+      } else {
+        audio.pause(); // Pause the audio
+        icon.classList.remove('fa-volume-up'); // Update to "volume-off" icon
+        icon.classList.add('fa-volume-off');
+      }
+    });
+    </script>
+  
+
+  </body>
+</html>
